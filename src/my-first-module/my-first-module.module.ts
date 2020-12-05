@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
-import { FirstControllerController } from './controllers/first-controller/first-controller.controller';
+import { TodoController } from './controllers/todo/todo.controller';
+import { TodoService } from './services/todo/todo.service';
 
 @Module({
-  controllers: [FirstControllerController]
+  controllers: [TodoController],
+  providers: [TodoService],
 })
 export class MyFirstModuleModule {}
