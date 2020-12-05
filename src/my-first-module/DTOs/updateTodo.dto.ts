@@ -1,3 +1,4 @@
+import { Type } from "class-transformer";
 import { IsIn, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from "class-validator";
 import { ErrorMessage } from "../enums/error-messages.enum";
 import { TodoStatus } from "../enums/todo-status.enum";
@@ -11,6 +12,7 @@ export class UpdateTodoDTO{
     })
     id: string;
     
+    @Type(() => String)
     @IsOptional()
     @IsString({
         message: ErrorMessage.isString
@@ -26,6 +28,7 @@ export class UpdateTodoDTO{
     })
     name: string;
     
+    @Type(() => String)
     @IsOptional()
     @IsString({
         message: ErrorMessage.isString

@@ -1,8 +1,10 @@
+import { Type } from "class-transformer";
 import { IsNotEmpty, IsString, MaxLength, MinLength } from "class-validator";
 import { ErrorMessage } from "../enums/error-messages.enum";
 
 
 export class AddTodoDTO{
+    @Type(() => String)
     @IsString({
         message: ErrorMessage.isString
     })
@@ -17,7 +19,7 @@ export class AddTodoDTO{
     })
     name: string;
     
-
+    @Type(() => String)
     @IsString({
         message: ErrorMessage.isString
     })

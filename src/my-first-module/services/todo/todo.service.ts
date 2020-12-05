@@ -53,9 +53,7 @@ export class TodoService {
         const index = this.getIndexOfTodo(newTodo['id']);
     
         if (index < this.todos.length) {
-            console.log("in first if")
             if (newTodo['name']) {
-                console.log("in second if")
                 this.todos[index].setName(newTodo['name']);
             }
             if (newTodo['status']){
